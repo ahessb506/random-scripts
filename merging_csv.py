@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import glob
+import csv  # Import the csv module
 
 # Define the directory containing your CSV files
 csv_directory = 'transcripts/'  # Replace with your directory path
@@ -58,6 +59,6 @@ df = pd.DataFrame(data)
 
 # Save to a new CSV file with proper quoting
 output_file = 'combined_transcripts.csv'
-df.to_csv(output_file, index=False, encoding='utf-8', quoting=pd.io.common.csv.QUOTE_ALL)
+df.to_csv(output_file, index=False, encoding='utf-8', quoting=csv.QUOTE_ALL)  # Use csv.QUOTE_ALL here
 
 print(f"All transcripts have been combined into {output_file}")
